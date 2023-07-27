@@ -39,7 +39,14 @@ localStorage.setItem('todos',JSON.stringify(todos))
           type:'[TODO] Remove Todo',
           payload:id
         })
-        
+    }
+
+    const handleToggleTodo=(id)=>{
+
+       dispatch({
+       type:'[TODO] Toggle Todo',
+        payload:id
+       })
     }
  
     return (
@@ -50,8 +57,9 @@ localStorage.setItem('todos',JSON.stringify(todos))
     <div className="row">
        <div className="col-7">
            < TodoList 
-           todos={todos}
-            onDeleteTodo={handleDeleteTodo}
+              todos={todos}
+               onDeleteTodo={handleDeleteTodo}
+               onToggleTodo={handleToggleTodo}
             />
    
        </div>

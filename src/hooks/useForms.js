@@ -12,8 +12,8 @@ const  onInputChange= ({target} ) =>{
     })
 }
 
-const  onReset= ({target} ) =>{
-    const {name,value}=target;
+const  onReset= () =>{
+    
     setForm(initialForm)
 }
 

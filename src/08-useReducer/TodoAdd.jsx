@@ -18,7 +18,7 @@ const newTodo={
     done:false,
     }
      onNewTodo(newTodo)
-     onReset();
+     onReset(event);
 }
 
     return (
