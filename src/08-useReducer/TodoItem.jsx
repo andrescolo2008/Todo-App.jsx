@@ -2,8 +2,9 @@ export const TodoItem = ({ todo ,onDeleteTodo,onToggleTodo}) => {
   return (
     <li className="list-group-item d-flex justify-content-between">
       <span 
-      className={`align-self-center ${(todo.done) ? "text-decoration-line-through" : '' }`}
-      onClick={()=> onToggleTodo(todo.description)}
+      className={`align-self-center ${(todo.done) ? "text-warning bg-dark  badge bg-primary text-wrap width: 6rem" : '' }`}
+     
+      onClick={()=> onToggleTodo(todo.id)}
       > 
       {todo.description} 
       </span>
@@ -11,6 +12,10 @@ export const TodoItem = ({ todo ,onDeleteTodo,onToggleTodo}) => {
       className="btn btn-danger "
       onClick={()=>onDeleteTodo(todo.id)}
       >Borrar</button>
+      
     </li>
+    
   );
 };
+
+//"list-group-item d-flex justify-content-between"

@@ -3,22 +3,16 @@ import { todoReducer } from "./todoReducer"
 import { TodoList } from "./TodoList"
 import { TodoAdd } from "./TodoAdd"
 
-
-
-const initialState= [
-    // {
-    //     id:new Date().getTime(),
-    //     description:'Recolectar la piedra del alma ',
-    //     done:false,
-    // },
-]
+const initialState= []
 
 const init= ()=>{
     return JSON.parse(localStorage.getItem('todos')) || [];
 }
 
 export const TodoApp = () => {
-
+// crear un componente que se llame useTodos
+// todos,handledeleteTodo,handleNewTodo,handleToggleTodo
+//const [todos,handledeleteTodo,handleNewTodo,handleToggleTodo]=useTodo(), que esto maneje  todo esto  useEffect y todos
 
     const [todos, dispatch] = useReducer(todoReducer, initialState,init)
  
@@ -73,6 +67,7 @@ localStorage.setItem('todos',JSON.stringify(todos))
 
     </>
   )
+
 }
 
 
