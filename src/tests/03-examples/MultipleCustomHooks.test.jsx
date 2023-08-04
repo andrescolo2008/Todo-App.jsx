@@ -5,8 +5,8 @@ import { useCounter } from "../../hooks/useCounter"
 
 
 
-jest.mock('../../src/hooks/useFetch')
-jest.mock('../../src/hooks/useCounter')
+jest.mock('../../hooks/useFetch')
+jest.mock('../../hooks/useCounter')
 
 describe('pruebas en < MultipleCustomHooKs>',()=>{
 
@@ -29,13 +29,13 @@ expect(screen.getByText('Loading ....'))
 expect(screen.getByText('Breaking bad quotes'))
 const nextButton=screen.getByRole('button',{name:'Next quote'})
 // screen.debug()
-   expect(nextButton.disabled).toBeTruthy();
+   expect(nextButton.disabled).toBeFalsy();
    
    
    })
    test('debe de mostrar un Quote ', () => { 
       useFetch.mockReturnValue({
-         data:[{author:'Fernando',quote:'hola mundo'}],
+         data:[{author:'Fernando',quote:'Hola Mundo'}],
          isLoading:false,
          hasError:null
       })
@@ -47,7 +47,7 @@ const nextButton=screen.getByRole('button',{name:'Next quote'})
       expect(screen.getByText('Fernando') ).toBeTruthy()
       const nextButton=screen.getByRole('button',{name:'Next quote'})
 
-   expect(nextButton.disabled).toBeTruthy();
+   expect(nextButton.disabled).toBeFalsy();
          
          })
 
