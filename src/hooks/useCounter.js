@@ -6,14 +6,14 @@ import { useState } from "react"
     const [counter,setCounter]= useState(initialValue)
 
     const increment= ( value= 1) =>{
-        setCounter(counter + value);
+        setCounter((current)=> current + value);
     }
 
     const shrink= (value=1 ) =>{
 
         if( counter<1) return;
 
-        setCounter(counter -value);
+        setCounter((current)=> current -value);
     }
 
     const restart= ( ) =>{
